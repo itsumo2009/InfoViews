@@ -238,12 +238,11 @@ namespace InfoViews.CustomAI
                 return UnityEngine.Color.Lerp(normalColor, halfThreatColor, threat * 2.0f);
         }
 
-        public static void PrivateBuildingAIGetColorPostFix(ushort buildingID, ref Building data, InfoManager.InfoMode infoMode, ref UnityEngine.Color __result)
+        public static void PrivateBuildingAIGetColorPostFix(ushort buildingID, ref Building data, InfoManager.InfoMode infoMode, InfoManager.SubInfoMode subMode, ref UnityEngine.Color __result)
         {
             ItemClass @class = data.Info.m_class;
             ItemClass.Service service = @class.m_service;
             InfoManager instance = Singleton<InfoManager>.instance;
-            var subMode = instance.CurrentSubMode;
 
             if (infoMode == InfoManager.InfoMode.Education)
             {

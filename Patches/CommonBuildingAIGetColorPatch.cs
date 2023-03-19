@@ -17,13 +17,13 @@ namespace InfoViews.Patch
                     "GetColor",
                     BindingFlags.Instance | BindingFlags.Public,
                     null,
-                    new[] { typeof(ushort), typeof(Building).MakeByRefType(), typeof(InfoManager.InfoMode) },
+                    new[] { typeof(ushort), typeof(Building).MakeByRefType(), typeof(InfoManager.InfoMode), typeof(InfoManager.SubInfoMode) },
                     new ParameterModifier[0]);
         }
 
-        public static void Postfix(ushort buildingID, ref Building data, InfoManager.InfoMode infoMode, ref Color __result)
+        public static void Postfix(ushort buildingID, ref Building data, InfoManager.InfoMode infoMode, InfoManager.SubInfoMode subInfoMode, ref Color __result)
         {
-            InfoViewsPrivateBuildingAI.PrivateBuildingAIGetColorPostFix(buildingID, ref data, infoMode, ref __result);
+            InfoViewsPrivateBuildingAI.PrivateBuildingAIGetColorPostFix(buildingID, ref data, infoMode, subInfoMode, ref __result);
         }
     }
 }

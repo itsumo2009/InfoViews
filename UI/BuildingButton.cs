@@ -3,7 +3,6 @@ using ColossalFramework.UI;
 using UnityEngine;
 
 using InfoViews.Util;
-using UnityEngine.UI;
 
 namespace InfoViews.UI
 {
@@ -39,7 +38,6 @@ namespace InfoViews.UI
 
         public override void Start()
         {
-            toggled = false;
             district = 0;
             playAudioEvents = true;
             name = "TransportationButton";
@@ -89,7 +87,6 @@ namespace InfoViews.UI
             base.Update();
         }
 
-        private bool toggled;
         byte district;
     }
 }
